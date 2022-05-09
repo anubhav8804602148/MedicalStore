@@ -1,8 +1,0 @@
-[2022-05-07 11:22:54.752] - 22056 INFO [restartedMain] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
-[2022-05-07 11:22:54.765] - 22056 INFO [restartedMain] --- org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/10.0.18]
-[2022-05-07 11:22:55.079] - 22056 INFO [restartedMain] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]: Initializing Spring embedded WebApplicationContext
-[2022-05-07 11:22:55.230] - 22056 INFO [restartedMain] --- org.hibernate.jpa.internal.util.LogHelper: HHH000204: Processing PersistenceUnitInfo [name: default]
-[2022-05-07 11:22:55.275] - 22056 INFO [restartedMain] --- org.hibernate.Version: HHH000412: Hibernate ORM core version 5.6.8.Final
-[2022-05-07 11:22:55.439] - 22056 INFO [restartedMain] --- org.hibernate.annotations.common.Version: HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-[2022-05-07 11:22:55.908] - 22056 INFO [restartedMain] --- org.hibernate.dialect.Dialect: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-[2022-05-07 11:22:56.684] - 22056 INFO [restartedMain] --- org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
