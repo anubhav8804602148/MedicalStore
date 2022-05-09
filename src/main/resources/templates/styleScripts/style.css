@@ -1,0 +1,60 @@
+table, table > tr, tr > td{
+	border-style:inset rgb(121, 121, 121);
+	margin: 5px;
+	padding: 5px;
+}
+form > table {
+	margin-top: 5%;
+	margin-left: 30%;
+}
+
+.formSubmitField > td{
+	padding-left: 10%;
+}
+.formSubmitField > td > input {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+ul > li {
+	margin: 10px;
+}
+.active{
+	background-color: red;
+}
+
+.messageStyle1{
+	text-align: center;
+	font-size: 60px;
+	color: rgb(159, 159, 183);
+}
+.messageStyle3{
+	margin-left: 5%;
+	margin-top: 2%;
+}
+.messageStyle2{
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 5%;
+	font-size: 20px;
+	color: rgb(82, 82, 95);
+}
+table {
+	background-image: linear-gradient(45deg, rgb(245,245,245), rgb(220,220,220));
+}
+td{
+	border: 1px solid rgb(159, 159, 183);
+}
+thead>tr{
+	border: 2px solid rgb(100, 100, 100);
+}
+tbody{
+	border: 2px solid rgb(100, 100, 100);
+}
+#billingForm{
+	margin-left: -20%;
+}
+#customerDetailsForm{
+	border:inset rgb(139, 147, 144);
+	background-color: rgb(120,130,130);
+	margin-bottom: 30px;
+}

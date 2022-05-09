@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" th:href="favicon.png" />
+		<meta charset="ISO-8859-1">
+		<script src="styleScripts/jquery.js" type="text/javascript"></script>
+		<script src="styleScripts/angular.js" type="text/javascript"></script>
+		<script src="styleScripts/script.js" type="text/javascript"></script>
+		<script src="styleScripts/bootstrap.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="styleScripts/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="styleScripts/style.css"/>
+        <title>Inventory | Medical Store</title>
+	</head>
+	<body>
+		<div class="itemTable">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">
+							Medical Store</a>
+					</div>
+					<ul class="nav navbar-nav">							
+						<li><a href="/">Home</a></li>
+						<li class="active"><a href="/inventory">Inventory</a></li>
+						<li><a href="/transactions">Transactions</a></li>
+						<li><a href="/sellItem">Sell</a></li>
+						<li><a href="/purchase">Purchase</a></li>
+						<li><a href="/bills">Bills</a></li>
+					</ul>
+				</div>
+			</nav>
+			<table class="inventoryTable">
+				<thead>
+					<tr>
+						<td><input id="idSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="nameSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="quantitySearchIventory" onchange="searchInventory()"></td>
+						<td><input id="batchNumberSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="costPriceSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="sellingPriceSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="mfgDateSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="purchasingDateSearchIventory" onchange="searchInventory()"></td>
+						<td><input id="expiryDateSearchIventory" onchange="searchInventory()"></td>
+					</tr>
+					<tr>
+						<td>Id</td>
+						<td>Name</td>
+						<td>Quantity</td>
+						<td>Batch Number</td>
+						<td>Cost Price</td>
+						<td>Selling Price</td>
+						<td>Manufacturing Date</td>
+						<td>Purchasing Date</td>
+						<td>Expiry Date</td>
+					</tr>
+				</thead>						
+				<tbody>
+					<tr th:each="product : ${products}">
+						<td th:text="${product.id}"></td>
+						<td th:text="${product.name}"></td>
+						<td th:text="${product.quantity}"></td>
+						<td th:text="${product.batchNo}"></td>
+						<td th:text="${product.costPrice}"></td>
+						<td th:text="${product.sellingPrice}"></td>
+						<td th:text="${product.mfgDate}"></td>
+						<td th:text="${product.purchasingDate}"></td>
+						<td th:text="${product.expiryDate}"></td>							
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+	</body>
+</html>

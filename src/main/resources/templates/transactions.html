@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" th:href="favicon.png" />
+		<meta charset="ISO-8859-1">
+		<script src="styleScripts/jquery.js" type="text/javascript"></script>
+		<script src="styleScripts/angular.js" type="text/javascript"></script>
+		<script src="styleScripts/script.js" type="text/javascript"></script>
+		<script src="styleScripts/bootstrap.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="styleScripts/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="styleScripts/style.css"/>
+        <title>Transactions | Medical Store</title>
+	</head>
+	<body>
+		<div>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">
+							Medical Store</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a href="/">Home</a></li>
+						<li><a href="/inventory">Inventory</a></li>
+						<li class="active"><a href="/transactions">Transactions</a></li>
+						<li><a href="/sellItem">Sell</a></li>
+						<li><a href="/purchase">Purchase</a></li>
+						<li><a href="/bills">Bills</a></li>
+					</ul>
+				</div>
+			</nav>
+			<table class="transactionsTable">
+				<thead>
+					<tr>
+						<td>Transaction  Id</td>
+						<td>Product Id</td>
+						<td>Product Name</td>
+						<td>Quantity</td>
+						<td>Cost Price</td>
+						<td>Selling Price</td>
+						<td>Batch Number</td>
+						<td>Transaction Date</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="transaction : ${transactions}">
+						<td th:text="${transaction.transactionId}"></td>
+						<td th:text="${transaction.productId}"></td>
+						<td th:text="${transaction.productName}"></td>
+						<td th:text="${transaction.quantity}"></td>
+						<td th:text="${transaction.costPrice}"></td>
+						<td th:text="${transaction.sellingPrice}"></td>
+						<td th:text="${transaction.batchNumber}"></td>
+						<td th:text="${transaction.transactionDate}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

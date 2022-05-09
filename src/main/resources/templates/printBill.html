@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" th:href="favicon.png" />
+		<meta charset="ISO-8859-1">
+		<script src="styleScripts/jquery.js" type="text/javascript"></script>
+		<script src="styleScripts/angular.js" type="text/javascript"></script>
+		<script src="styleScripts/script.js" type="text/javascript"></script>
+		<script src="styleScripts/bootstrap.js" type="text/javascript"></script>
+		<link rel="stylesheet" type="text/css" href="styleScripts/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="styleScripts/style.css"/>
+		<title>Home | Medical Store</title>
+	</head>
+<body>
+    <p class="printBillHeader">
+        Medical Store<br>
+        Nutan Nagar, Korrah<br>
+        Hazaribagh, Jharkhand<br>
+        <table>
+            <thead>
+                <tr>
+                    <td>Transaction Date : </td>
+                    <td th:text="${bill.transactionDate}"></td>
+                    <td></td>
+                    <td style="text-align:right">Customer Name: </td>
+                    <td th:text="${bill.customerName}"></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="itemHeader">
+                    <td class="col1">Id</td>
+                    <td class="col2">Product Name</td>
+                    <td class="col3">Selling Price</td>
+                    <td class="col4">Quantity</td>
+                    <td class="col5">Amount</td>
+                </tr>
+                <tr class="itemRow" th:each="item : ${bill.allTransactions}">
+                    <td class="col1" th:text="${item?.transactionId}"></td>
+                    <td class="col2" th:text="${item?.productName}"></td>
+                    <td class="col3" th:text="${item?.sellingPrice}"></td>
+                    <td class="col4" th:text="${item?.quantity}"></td>
+                    <td class="col5" th:text="${item?.quantity}"></td>
+                </tr>
+                <tr class="itemTotal">
+                    <td class="col1">Total</td>
+                    <td class="col2"></td>
+                    <td class="col3"></td>
+                    <td class="col4"></td>
+                    <td class="col5">Amount</td>
+                </tr>
+            </tbody>
+        </table>        
+    </p>
+</body>
+<script>
+    var allRows = document.getElementsByClassName("itemRow");
+    var rowLen = allRows.length;
+    var total=0;
+    for(var i=0;i<rowLen;i++){
+        var a = allRows[i].getElementsByClassName("col3")[0].innerHTML;
+        var b = allRows[i].getElementsByClassName("col4")[0].innerHTML;
+        allRows[i].getElementsByClassName("col5")[0].innerHTML=a*b;
+        total += a*b;
+        console.log(a);
+    }
+    document.getElementsByClassName("itemTotal")[0].getElementsByClassName("col5")[0].innerHTML=total;
+</script>
+<style>
+    .printBillHeader {
+        text-align: center;
+    }
+    .col1{
+        width: 10%;
+    }
+    .col2{
+        width: 40%;
+    }
+    .col3{
+        width: 20%;
+    }
+    .col4{
+        width: 20%;
+    }
+    .col5{
+        width: 10%;
+    }
+    td{
+        border: 1px solid black;
+    }
+    thead>tr>td{
+        border: 0ch;
+        padding-bottom: 5%;
+    }
+    table{
+        width: 100%;
+    }
+    .itemHeader > td{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .itemTotal > td{
+        font: bold;
+    }
+</style>
+</html>
